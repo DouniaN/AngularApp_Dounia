@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 import { LoginComponent } from './login/login.component';
+import { LogFormComponent } from './log-form/log-form.component';
 
 //Pour le formulaire
 
@@ -27,7 +28,9 @@ import { LoginComponent } from './login/login.component';
     FooterComponent,
     LayoutComponent,
     DashboardComponentComponent,
-    LoginComponent
+    LoginComponent,
+    LogFormComponent,
+  
    
   ],
   imports: [
