@@ -9,6 +9,14 @@ import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
 import { DashboardComponentComponent } from './dashboard-component/dashboard-component.component';
+import { ReactiveFormsModule } from '@angular/forms';
+//Pour communiquer avec les API
+import {HttpClientModule} from '@angular/common/http';
+
+import { LoginComponent } from './login/login.component';
+
+//Pour le formulaire
+
 
 @NgModule({
   declarations: [
@@ -18,11 +26,15 @@ import { DashboardComponentComponent } from './dashboard-component/dashboard-com
     ContentComponent,
     FooterComponent,
     LayoutComponent,
-    DashboardComponentComponent
+    DashboardComponentComponent,
+    LoginComponent
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
