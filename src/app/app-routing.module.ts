@@ -6,6 +6,7 @@ import { DashboardComponentComponent } from './public/dashboard-component/dashbo
 import { LayoutComponent } from './public/layout/layout.component';
 
 import { LoginComponent } from './public/login/login.component';
+import { AuthGuard } from './utils/auth.guard';
 
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
   { path: 'voitures', component: ContentComponent},
   { path: 'login', component: LoginComponent},
   ]},
-   {path:'admin',component:BackofficeComponent}
+   {path:'admin',component:BackofficeComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
