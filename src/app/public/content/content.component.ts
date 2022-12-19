@@ -1,6 +1,6 @@
 import { Component ,OnInit } from '@angular/core';
-import { ContentService } from '../services/content.service';
-import { Voiture } from '../models/voiture';
+import { ContentService } from '../../services/content.service';
+import { Voiture } from '../../models/voiture';
 
 @Component({
   selector: 'app-content',
@@ -23,7 +23,11 @@ export class ContentComponent implements OnInit{
     this.ContentService.findAll().subscribe(voitures => this.voitures = voitures);
   }
 
- 
+  detailsVoiture(id:any){
+    this.ContentService.getBy(id).subscribe(()=>{
+      this.voitures =this.voitures.filter(voitures =>voitures.id =id);
+    })
+  }
 
   
 }

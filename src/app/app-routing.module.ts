@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LayoutComponent } from './layout/layout.component';
-import { LoginComponent } from './login/login.component';
+import { BackofficeComponent } from './protected/backoffice/backoffice.component';
+import { ContentComponent } from './public/content/content.component';
+import { DashboardComponentComponent } from './public/dashboard-component/dashboard-component.component';
+import { LayoutComponent } from './public/layout/layout.component';
+
+import { LoginComponent } from './public/login/login.component';
+
 
 const routes: Routes = [
-  {path:'',component:LayoutComponent,children: [
-
+  { path: '', component: LayoutComponent, children: [
+  { path: '', component: DashboardComponentComponent},
+  { path: 'voitures', component: ContentComponent},
   { path: 'login', component: LoginComponent},
   ]},
-
+   {path:'admin',component:BackofficeComponent}
 ];
 
 @NgModule({

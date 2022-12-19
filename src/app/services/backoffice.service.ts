@@ -1,15 +1,13 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { environment } from 'src/environoments/environnement';
 import { Voiture } from '../models/voiture';
-
-
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ContentService {
-  
+export class BackofficeService {
+
   voitures: Voiture[] = [
     
   ];
@@ -24,13 +22,9 @@ export class ContentService {
     return this.httpClient.get<Voiture[]>(environment.api.url+'voiture',{'headers':headers});
   }
 
-  getBy(id:number){
+  delete(id:number){
     const headers = new HttpHeaders().set("apikey",environment.api.key)
-    return this.httpClient.get(environment.api.url+`voiture?id=eq.${id}`,{'headers':headers})
+    return this.httpClient.delete(environment.api.url+`voiture?id=eq.${id}`,{'headers':headers})
   }
 
 }
-
-
-
-
