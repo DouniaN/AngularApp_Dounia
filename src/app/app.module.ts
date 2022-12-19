@@ -14,6 +14,7 @@ import { DashboardComponentComponent } from './public/dashboard-component/dashbo
 import { LoginComponent } from './public/login/login.component';
 import { BackofficeComponent } from './protected/backoffice/backoffice.component';
 import { FormAddComponent } from './protected/form-add/form-add.component';
+import { FormUpdateComponent } from './protected/form-update/form-update.component';
 
 //Pour le formulaire
 
@@ -30,7 +31,8 @@ import { FormAddComponent } from './protected/form-add/form-add.component';
     LoginComponent,
     LogFormComponent,
     BackofficeComponent,
-    FormAddComponent
+    FormAddComponent,
+    FormUpdateComponent
   
    
   ],

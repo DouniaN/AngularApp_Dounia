@@ -28,7 +28,7 @@ export class BackofficeService {
     return this.httpClient.delete(environment.api.url+`voiture?id=eq.${id}`,{'headers':headers})
   }
 
-  add(voiture: Voiture){
+  add(voiture: any){
     const headers = new HttpHeaders().set("apikey",environment.api.key)
     return this.httpClient.post<Voiture>(environment.api.url+`voiture`, voiture,{'headers':headers})
   }

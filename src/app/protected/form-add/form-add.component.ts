@@ -18,10 +18,10 @@ export class FormAddComponent {
   })
 
   MyVoiture:Voiture={
-    "couleur":this.AjoutForm.value.couleur?.toString(),
-    "prix" :200000,
-    "libelle" :"Audi",
-    "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFEA34CO_L7HaJS-hkZJ0p7_vzXcCRRxIjuQ&usqp=CAU"
+    "couleur":"",
+    "prix" :0,
+    "libelle" :"",
+    "image":""
   }
   voitures: Voiture[] = [
     
@@ -31,14 +31,19 @@ export class FormAddComponent {
   ajouter(){
     console.log(this.AjoutForm.value.libelle);
     //let credentials =  {...this.AjoutForm.value};
-    this.BackofficeService.add(this.MyVoiture)
+    this.BackofficeService.add({...this.AjoutForm.value})
         .subscribe((voitures) => {
           this.voitures=[voitures,...this.voitures]
         })
+
+      alert("Ajout effectué avec success");
+      this.AjoutForm.setValue({"couleur":'',"prix":'',"libelle":'','image':''})
   }
 
-  editVoiture(voitures: Voiture){
-    this.MyVoiture=voitures;
-  }
+  /*editVoiture(voitures: Voiture){
+
+    this.AjoutForm.setValue({"couleur":"","prix":'',"libelle":'','image':''})
+
+  }*/
   
 }
