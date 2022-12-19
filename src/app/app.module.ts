@@ -13,6 +13,7 @@ import { LayoutComponent } from './public/layout/layout.component';
 import { DashboardComponentComponent } from './public/dashboard-component/dashboard-component.component';
 import { LoginComponent } from './public/login/login.component';
 import { BackofficeComponent } from './protected/backoffice/backoffice.component';
+import { FormAddComponent } from './protected/form-add/form-add.component';
 
 //Pour le formulaire
 
@@ -28,7 +29,8 @@ import { BackofficeComponent } from './protected/backoffice/backoffice.component
     DashboardComponentComponent,
     LoginComponent,
     LogFormComponent,
-    BackofficeComponent
+    BackofficeComponent,
+    FormAddComponent
   
    
   ],

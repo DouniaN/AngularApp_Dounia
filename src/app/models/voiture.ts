@@ -1,7 +1,8 @@
 export interface Voiture {
     id?:Number,
-    couleur:String,
-    prix : Number,
-    libelle : String,
-    image:String
+    couleur?:String | undefined,
+    prix? : Number| undefined,
+    libelle?:String | undefined,
+    image?:String | undefined
 }
+

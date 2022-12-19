@@ -29,4 +29,6 @@ export class BackofficeComponent {
       this.voitures =this.voitures.filter(voitures =>voitures.id !=id);
     })
   }
+
+  
 }

@@ -30,7 +30,9 @@ export class BackofficeService {
 
   add(voiture: Voiture){
     const headers = new HttpHeaders().set("apikey",environment.api.key)
-    return this.httpClient.post(environment.api.url+`voiture`, voiture,{'headers':headers})
+    return this.httpClient.post<Voiture>(environment.api.url+`voiture`, voiture,{'headers':headers})
   }
+
+  
 
 }

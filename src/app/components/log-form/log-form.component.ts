@@ -18,24 +18,13 @@ export class LogFormComponent {
     password: new FormControl('', [Validators.required])
   })
 
-  constructor(private userService: UserService, private router:Router){}
 
   onSubmit(){
     console.log(this.loginForm.value);
    
     let credentials =  {...this.loginForm.value};
     this.credentials.emit(credentials);
-    this.userService.login(credentials).subscribe({
-      next: (data) => {
-        console.log(data);
-        localStorage.setItem('token',data['access_token']);
-        this.userService.setLogin();
-        this.router.navigateByUrl('/admin')
-      }, 
-      error: (error) => {
-        console.log(error)
-      }
-    })
+   
   }
 
 }

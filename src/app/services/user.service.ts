@@ -55,6 +55,7 @@ export class UserService {
       credentials,  {"headers": headers}
     );
   }
+  
   logout(){
     localStorage.removeItem("token");
   }

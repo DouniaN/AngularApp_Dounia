@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container px-4 px-lg-5">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="./voitures">Index</a></li>
+                    <a class="nav-link " id="navbarDropdown" href="/admin" role="button" data-bs-toggle="dropdown" aria-expanded="false">Supprimer</a>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<form [formGroup]="AjoutForm" (ngSubmit)="ajouter()">
+    <div class="form-group">
+      <label for="libelle">Libelle</label>
+      <input   formControlName="libelle" class="form-control" id="libelle" aria-describedby="libelle" placeholder="Entrer libelle">
+        <div *ngIf="AjoutForm.controls['libelle'].invalid && AjoutForm.controls['libelle'].touched">
+            <div *ngIf="AjoutForm.controls['libelle'].errors?.['required']">
+                libellé obligatoire
+            </div>
+        </div>
+    </div>
+   
+    <div class="form-group">
+      <label for="prix">Prix</label>
+      <input formControlName="prix" class="form-control"  id="prix" placeholder="prix">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="couleur">couleur</label>
+        <input formControlName="couleur" class="form-control" id="couleur" name="couleur" placeholder="Couleur">
+    </div>
+    <br>
+    <div class="form-group">
+       <!--<label for="avatar">Choisi une image:</label>
+        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">--> 
+        <label for="image">Image</label>
+        <input formControlName="image" class="form-control" id="image" name="image" placeholder="Entrer le lien de l'image">
+    </div>
+    <br>
+    <button type="submit" >Enregistrer</button>
+</form>
