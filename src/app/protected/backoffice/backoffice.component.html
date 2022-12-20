@@ -21,7 +21,7 @@
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                            <button (click)="deleteVoiture(v.id)" class="btn btn-dark mt-auto" >Supprimer</button>
-                           <a routerLink="['/edite',v.id]" disabled class="btn btn-success" >Modifier</a>
+                           <a [routerLink]="['/edite',v.id]" disabled class="btn btn-success" >Modifier</a>
                         </div>
                     </div>
                 </div>  

@@ -43,7 +43,7 @@ export class BackofficeService {
     const headers = new HttpHeaders().set('apikey', environment.api.key);
     return this.httpClient.patch<Voiture>(environment.api.url + 'article?id=eq.'+id,credentials, {headers: headers})
   }*/
-  editVoiture(id:number){
+  getVoiture(id:number){
     const headers = new HttpHeaders().set("apikey",environment.api.key)
     return this.httpClient.get(environment.api.url+`voiture?id=eq.${id}`,{'headers':headers})
   }

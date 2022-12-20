@@ -31,9 +31,9 @@ export class BackofficeComponent {
   }
 
   edit(id:any){
-    this.ContentService.editVoiture(id).subscribe(()=>{
+    // this.ContentService.editVoiture(id).subscribe(()=>{
       
-    })
+    // })
   }
 
   
