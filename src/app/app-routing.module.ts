@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BackofficeComponent } from './protected/backoffice/backoffice.component';
 import { FormAddComponent } from './protected/form-add/form-add.component';
+import { FormUpdateComponent } from './protected/form-update/form-update.component';
 import { ContentComponent } from './public/content/content.component';
 import { DashboardComponentComponent } from './public/dashboard-component/dashboard-component.component';
 import { LayoutComponent } from './public/layout/layout.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'voitures', component: ContentComponent},
   { path: 'login', component: LoginComponent},
   { path: 'ajouter', component: FormAddComponent},
+  { path: 'update', component:FormUpdateComponent}
   ]},
   
    {path:'admin',component:BackofficeComponent, canActivate: [AuthGuard]},

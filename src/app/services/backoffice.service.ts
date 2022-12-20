@@ -33,6 +33,14 @@ export class BackofficeService {
     return this.httpClient.post<Voiture>(environment.api.url+`voiture`, voiture,{'headers':headers})
   }
 
+  update(voiture: any){
+    const headers = new HttpHeaders().set("apikey",environment.api.key)
+    return this.httpClient.put<Voiture>(environment.api.url+`voiture`, voiture,{'headers':headers})
+
+  }
+
+  
+  
   
 
 }
