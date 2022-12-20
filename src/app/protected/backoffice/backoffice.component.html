@@ -1,5 +1,6 @@
  <!-- Section-->
  <app-navbar></app-navbar>
+ <router-outlet></router-outlet>
 <section class="py-5">
     <div class="container px-4 px-lg-5 mt-5">
         <div  class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
@@ -20,8 +21,7 @@
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                            <button (click)="deleteVoiture(v.id)" class="btn btn-dark mt-auto" >Supprimer</button>
-                           <a routerLink="/update" class="btn btn-success" >Modifier</a>
-
+                           <a routerLink="['/edite',v.id]" disabled class="btn btn-success" >Modifier</a>
                         </div>
                     </div>
                 </div>  

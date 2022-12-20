@@ -35,10 +35,18 @@ export class BackofficeService {
 
   update(voiture: any){
     const headers = new HttpHeaders().set("apikey",environment.api.key)
-    return this.httpClient.put<Voiture>(environment.api.url+`voiture`, voiture,{'headers':headers})
+    return this.httpClient.put(environment.api.url+`voiture?id=eq.${voiture.id}`, voiture,{'headers':headers})
 
   }
 
+ /* update(id:number|null|undefined,credentials: {libelle?: string | null | undefined, couleur?: string | null | undefined,categorie?: string | null | undefined,url?: string | null | undefined}): Observable<Voiture> {
+    const headers = new HttpHeaders().set('apikey', environment.api.key);
+    return this.httpClient.patch<Voiture>(environment.api.url + 'article?id=eq.'+id,credentials, {headers: headers})
+  }*/
+  editVoiture(id:number){
+    const headers = new HttpHeaders().set("apikey",environment.api.key)
+    return this.httpClient.get(environment.api.url+`voiture?id=eq.${id}`,{'headers':headers})
+  }
   
   
   

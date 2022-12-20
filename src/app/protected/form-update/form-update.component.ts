@@ -10,6 +10,7 @@ import { BackofficeService } from 'src/app/services/backoffice.service';
 })
 export class FormUpdateComponent {
   updateForm = new FormGroup({
+    id:new FormControl(),
     libelle: new FormControl('', [Validators.required]),
     prix: new FormControl('',[Validators.required]),
     couleur: new FormControl('', [Validators.required]),
@@ -22,15 +23,23 @@ export class FormUpdateComponent {
     
   ]; 
 
-  edit(){
-    console.log(this.updateForm.value);
-    this.updateForm.setValue({"couleur":'',"prix":'',"libelle":'','image':''})
+  resetFormVoiture(){
+    this.updateForm.setValue({id:'',"couleur":'',"prix":'',"libelle":'','image':''})
   }
 
-  update(){
+  edit(){
+    console.log(this.updateForm.value);
+
+    this.updateForm.setValue({id:'',"couleur":'',"prix":'',"libelle":'','image':''})
+  }
+
+  updateVoiture(){
     this.BackofficeService.update({...this.updateForm.value})
     .subscribe((voitures) => {
-      this.voitures=[voitures,...this.voitures]
+      this.resetFormVoiture();
+      
     })
+
+   
   }
 }
